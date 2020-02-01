@@ -1,0 +1,15 @@
+<div class="container main-container">
+    <h1>Recetas</h1>
+    <div class="card-columns">
+
+        <div class="card animated fadeIn fast" *ngFor="let receta of recetas; let i = index">
+            <img class="card-img-top img-fluid" [src]="receta.img" [alt]="receta.nombre">
+            <div class="card-block">
+                <h4 class="card-title">{{ receta.nombre }}</h4>
+                <button (click)="verReceta(i)" type="button" class="btn btn-outline-primary btn-block">
+                Ver receta...
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

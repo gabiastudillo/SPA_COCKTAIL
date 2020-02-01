@@ -1,0 +1,24 @@
+<h1>Coincidencias para <i>"<small>{{ termino }}</small>"</i></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="recetas.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados para el término: {{ termino }}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+
+    <div class="card animated fadeIn fast" *ngFor="let receta of recetas; let i = index">
+        <img class="card-img-top img-fluid" [src]="receta.img" [alt]="receta.nombre">
+        <div class="card-block">
+            <h4 class="card-title">{{ receta.nombre }}</h4>
+            <p class="card-text">{{ receta.bio }}</p>
+            <p class="card-text"><small class="text-muted">{{receta.aparicion | date:'yyyy/MM'}}</small></p>
+            <br>
+            <a [routerLink]="['/cocktail']" class="btn btn-outline-danger">Regresar</a>
+        </div>
+    </div>
+</div>
